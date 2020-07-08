@@ -1,0 +1,50 @@
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+------------+
+| Domain | Method    | URI                    | Name             | Action                                                                 | Middleware |
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+------------+
+|        | GET|HEAD  | /                      |                  | Closure                                                                | web        |
+|        | GET|HEAD  | api/todos              | todos.index      | App\Http\Controllers\TodoController@index                              | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | POST      | api/todos              | todos.store      | App\Http\Controllers\TodoController@store                              | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | GET|HEAD  | api/todos/{todo}       | todos.show       | App\Http\Controllers\TodoController@show                               | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | PUT|PATCH | api/todos/{todo}       | todos.update     | App\Http\Controllers\TodoController@update                             | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | DELETE    | api/todos/{todo}       | todos.destroy    | App\Http\Controllers\TodoController@destroy                            | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | GET|HEAD  | api/user               |                  | Closure                                                                | api        |
+|        |           |                        |                  |                                                                        | auth:api   |
+|        | GET|HEAD  | home                   | home             | App\Http\Controllers\HomeController@index                              | web        |
+|        |           |                        |                  |                                                                        | auth       |
+|        | GET|HEAD  | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web        |
+|        |           |                        |                  |                                                                        | guest      |
+|        | POST      | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web        |
+|        |           |                        |                  |                                                                        | guest      |
+|        | POST      | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web        |
+|        | POST      | password/confirm       |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web        |
+|        |           |                        |                  |                                                                        | auth       |
+|        | GET|HEAD  | password/confirm       | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web        |
+|        |           |                        |                  |                                                                        | auth       |
+|        | POST      | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web        |
+|        | POST      | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web        |
+|        | GET|HEAD  | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web        |
+|        | GET|HEAD  | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web        |
+|        | POST      | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web        |
+|        |           |                        |                  |                                                                        | guest      |
+|        | GET|HEAD  | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web        |
+|        |           |                        |                  |                                                                        | guest      |
+|        | GET|HEAD  | todos                  | todos.index      | App\Http\Controllers\TodoController@index                              | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | POST      | todos                  | todos.store      | App\Http\Controllers\TodoController@store                              | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | GET|HEAD  | todos/create           | todos.create     | App\Http\Controllers\TodoController@create                             | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | GET|HEAD  | todos/{todo}           | todos.show       | App\Http\Controllers\TodoController@show                               | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | PUT|PATCH | todos/{todo}           | todos.update     | App\Http\Controllers\TodoController@update                             | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | DELETE    | todos/{todo}           | todos.destroy    | App\Http\Controllers\TodoController@destroy                            | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
+|        | GET|HEAD  | todos/{todo}/edit      | todos.edit       | App\Http\Controllers\TodoController@edit                               | web        |
+|        |           |                        |                  |                                                                        | auth:web   |
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+------------+
